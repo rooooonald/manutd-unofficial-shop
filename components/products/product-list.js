@@ -2,6 +2,7 @@ import FilterTags from "./filter-tags";
 import ProductItem from "./product-item";
 
 import styles from "./product-list.module.css";
+import { IconError } from "../ui/icons";
 
 export default function ProductList({
   list,
@@ -37,7 +38,10 @@ export default function ProductList({
       </div>
       <div className={styles.list}>
         {!hasItem && (
-          <p className={styles["no-item"]}>No Results Match the Criteria</p>
+          <div className={styles["no-item"]}>
+            <IconError size="2rem" />
+            <p>No Results Match the Criteria</p>
+          </div>
         )}
         {hasItem &&
           list.map((item) => <ProductItem key={item.pid} item={item} />)}

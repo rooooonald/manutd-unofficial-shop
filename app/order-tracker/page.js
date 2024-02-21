@@ -11,6 +11,7 @@ import { checkEmpty } from "@/lib/validations";
 import { getOrder } from "@/lib/orders";
 
 import styles from "./page.module.css";
+import { IconError } from "@/components/ui/icons";
 
 export default function OrderTrackerPage() {
   const [order, setOrder] = useState(null);
@@ -28,6 +29,12 @@ export default function OrderTrackerPage() {
   const submitHandler = async () => {
     const res = await getOrder(orderId);
     const foundOrder = JSON.parse(res);
+
+    console.log(foundOrder);
+    if (!foundOrder) {
+      setOrder({ status: "not found" });
+      return;
+    }
     setOrder(foundOrder);
   };
 
@@ -61,7 +68,7 @@ export default function OrderTrackerPage() {
       </form>
 
       <div className={styles["order"]}>
-        {order && (
+        {order && order.status !== "not found" && (
           <>
             <div className={styles.delivery}>
               <h2>
@@ -81,6 +88,12 @@ export default function OrderTrackerPage() {
               <OrderList list={order.items} />
             </div>
           </>
+        )}
+        {order?.status === "not found" && (
+          <div className={styles["not-found"]}>
+            <IconError size="2rem" />
+            <p>No Orders found</p>
+          </div>
         )}
       </div>
     </main>

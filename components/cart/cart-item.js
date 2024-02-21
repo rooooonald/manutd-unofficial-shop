@@ -9,6 +9,7 @@ import currencyFormatter from "@/lib/currency-formatter";
 
 import styles from "./cart-item.module.css";
 import { LazyMotion, domAnimation, m } from "framer-motion";
+import { RiDeleteBinFill } from "react-icons/ri";
 
 export default function CartItem({ item }) {
   const itemInfo = PRODUCTS.find((foundItem) => foundItem.pid === item.pid);
@@ -35,6 +36,12 @@ export default function CartItem({ item }) {
         <div className={styles.info}>
           <p className={styles.name}>{itemInfo.name}</p>
           <p>Size: {size.toUpperCase()}</p>
+          {customisation && (
+            <>
+              <p>Name: {customisation.name}</p>
+              <p>Number: {customisation.number}</p>
+            </>
+          )}
           <div className={styles["select-group"]}>
             <p>Quantity:</p>
             <select value={inputQuantity} onChange={changeQuantityHandler}>
@@ -50,14 +57,8 @@ export default function CartItem({ item }) {
             </select>
           </div>
           <button onClick={() => dispatch(cartActions.removeItem(item))}>
-            Delete
+            <RiDeleteBinFill style={{ fontSize: "1.25rem" }} />
           </button>
-          {customisation && (
-            <>
-              <p>{customisation.name}</p>
-              <p>{customisation.number}</p>
-            </>
-          )}
         </div>
         <div className={styles.price}>
           <p className="moving-gradient">{currencyFormatter(price)}</p>

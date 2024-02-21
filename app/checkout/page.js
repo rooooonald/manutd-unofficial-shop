@@ -20,6 +20,7 @@ import ButtonPrimary from "@/components/ui/button-primary";
 import dateFormatter from "@/lib/date-formatter";
 
 import styles from "./page.module.css";
+import { FaEdit } from "react-icons/fa";
 
 export default function CheckoutPage() {
   const [section, setSection] = useState("contact");
@@ -118,7 +119,7 @@ export default function CheckoutPage() {
                   <p> {phone}</p>
                 </div>
                 <button type="button" onClick={() => setSection("contact")}>
-                  Edit
+                  <FaEdit style={{ fontSize: "1.25rem" }} />
                 </button>
               </div>
             )}
@@ -140,7 +141,7 @@ export default function CheckoutPage() {
                   <p>By {dateFormatter(delivery.deliverDate)}</p>
                 </div>
                 <button type="button" onClick={() => setSection("delivery")}>
-                  Edit
+                  <FaEdit style={{ fontSize: "1.25rem" }} />
                 </button>
               </div>
             )}
@@ -166,7 +167,7 @@ export default function CheckoutPage() {
                   <p>{creditCardName}</p>
                 </div>
                 <button type="button" onClick={() => setSection("payment")}>
-                  Edit
+                  <FaEdit style={{ fontSize: "1.25rem" }} />
                 </button>
               </div>
             )}
