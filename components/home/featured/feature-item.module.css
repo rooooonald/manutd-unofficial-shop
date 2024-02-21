@@ -1,0 +1,140 @@
+.wrapper {
+  width: 25%;
+  min-width: 200px;
+  height: 100%;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-img {
+  width: 100%;
+  height: auto;
+}
+
+.name,
+.price {
+  font-family: var(--font-bebas);
+}
+
+.price {
+  height: 30px;
+  font-size: 1.5rem;
+
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.name {
+  height: 50px;
+  font-family: var(--font-bebas);
+  font-weight: 700;
+}
+
+.add-cart {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+
+.add-cart > div:nth-child(2) {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quantity-control {
+  width: 35%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: var(--font-bebas);
+}
+
+.quantity-control p {
+  font-size: 1.25rem;
+}
+
+.quantity-control button {
+  width: 20%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: transparent;
+  font-size: 1.5rem;
+}
+
+.cart-button {
+  width: 50%;
+  height: 30px;
+
+  color: white;
+  border-radius: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 90%;
+    min-width: auto;
+    height: auto;
+
+    column-gap: 10px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .product-info {
+    width: calc(100% - 60px);
+    margin-bottom: 10px;
+  }
+
+  .product-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .name {
+    height: auto;
+  }
+
+  .add-cart {
+    justify-content: flex-end;
+  }
+
+  .add-cart > div:nth-child(2) {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .quantity-control {
+    width: 80px;
+  }
+
+  .cart-button {
+    width: 150px;
+  }
+}
+
+/* @media screen and (max-width: 576px) {
+  .add-cart {
+    justify-content: center;
+  }
+} */

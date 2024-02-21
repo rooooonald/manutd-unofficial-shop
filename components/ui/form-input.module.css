@@ -1,0 +1,45 @@
+.wrapper {
+  position: relative;
+}
+
+.wrapper label {
+  padding: 0 0.5rem;
+  position: absolute;
+  top: -0.5rem;
+  left: 1rem;
+
+  background-color: white;
+  color: #aaa;
+}
+
+.wrapper input {
+  width: 100%;
+  height: 50px;
+  padding: 0 1rem;
+
+  font-size: 1rem;
+  font-family: var(--font-nunito);
+  border: 1px solid;
+}
+
+.wrapper input:focus {
+  border: 1px solid #aaa;
+}
+
+.wrapper input::placeholder {
+  color: #ccc;
+}
+
+.wrapper input:-webkit-autofill,
+.wrapper input:-webkit-autofill:hover,
+.wrapper input:-webkit-autofill:focus,
+.wrapper input:-webkit-autofill:active {
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}
+
+.error {
+  text-align: right;
+  color: var(--color-error);
+  font-size: 0.8rem;
+}

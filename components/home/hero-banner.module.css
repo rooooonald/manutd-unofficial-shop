@@ -1,0 +1,100 @@
+.wrapper {
+  width: 100%;
+  height: 700px;
+  position: relative;
+
+  display: flex;
+
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.5) 70%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    url("/images/hero-banner.jpg");
+  background-size: cover;
+  background-position: 70% 70%;
+}
+
+.title {
+  width: 25vw;
+
+  position: absolute;
+  top: 30%;
+  left: 10%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: white;
+
+  z-index: 1;
+}
+
+.title h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.title p {
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+
+.title button {
+  width: 50%;
+  min-width: 150px;
+}
+
+.arrow {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  color: white;
+
+  z-index: 1;
+}
+
+.arrow p {
+  font-size: 0.6rem;
+}
+
+.arrow svg {
+  animation: bounce 1s infinite ease-in-out normal;
+}
+
+@media screen and (min-width: 1400px) {
+  .wrapper {
+    background-position: 70% 70%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .title {
+    width: 50vw;
+
+    top: 20%;
+    left: 5%;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0) rotate(45deg);
+  }
+
+  50% {
+    transform: translateY(25px) rotate(45deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(45deg);
+  }
+}

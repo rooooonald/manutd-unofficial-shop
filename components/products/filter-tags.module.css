@@ -1,0 +1,39 @@
+.wrapper {
+  width: calc(100% - 50px);
+  margin-bottom: 20px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-tag {
+  height: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-radius: 15px;
+  font-size: 0.8rem;
+
+  overflow-x: hidden;
+}
+
+.filter-tag p {
+  padding: 0 20px;
+}
+
+.filter-tag div {
+  width: 30px;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-tag:hover div {
+  background-color: black;
+  color: white;
+}

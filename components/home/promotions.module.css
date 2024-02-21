@@ -1,0 +1,51 @@
+.wrapper {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.promotion-item1,
+.promotion-item2 {
+  min-width: 384px;
+  position: relative;
+
+  flex: 1;
+
+  background-color: black;
+}
+
+.promotion-image {
+  height: auto;
+  width: 100%;
+
+  display: block;
+}
+
+.promotion-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  color: white;
+  text-align: center;
+
+  transform: translate(-50%, -50%);
+}
+
+.promotion-text h1 {
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.promotion-text button {
+  width: 50%;
+  min-width: 150px;
+  height: 30px;
+
+  border-radius: 25px;
+}

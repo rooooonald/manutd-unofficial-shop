@@ -1,0 +1,17 @@
+.wrapper {
+  width: 100%;
+  min-width: 150px;
+  height: auto;
+}
+
+.wrapper h1 {
+  margin-bottom: 1rem;
+
+  font-size: 1.5rem;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wrapper ul li {
+  margin-bottom: 0.8rem;
+}

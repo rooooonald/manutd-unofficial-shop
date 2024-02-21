@@ -1,0 +1,32 @@
+.wrapper {
+  width: 100%;
+  height: auto;
+  padding: 50px 30px 10px 30px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: black;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.policy {
+  width: 80%;
+}
+
+.policy ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  column-gap: 50px;
+  row-gap: 0.8rem;
+}
+
+.wrapper hr {
+  width: 80%;
+  margin: 10px 0;
+
+  opacity: 0.5;
+}

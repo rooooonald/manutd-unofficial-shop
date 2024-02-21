@@ -1,0 +1,70 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  gap: 30px;
+}
+
+.label {
+  width: 80%;
+  height: 1rem;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+}
+
+.label div:nth-child(1) {
+  height: 100%;
+  width: 3px;
+
+  background: var(--gradient-background);
+}
+
+.label div:nth-child(2) {
+  margin-left: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-options button {
+  background-color: transparent;
+  font-family: var(--font-nunito);
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.radio-button {
+  width: 15px;
+  height: 15px;
+  background: var(--gradient-background);
+  opacity: 0.2;
+}
+
+.filter-options button:hover .radio-button {
+  opacity: 1;
+}
+
+.active {
+  opacity: 1;
+}
+
+@media screen and (max-width: 576px) {
+  .label {
+    width: 100%;
+  }
+}

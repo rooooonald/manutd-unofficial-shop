@@ -1,0 +1,19 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info p:nth-child(1) {
+  font-family: var(--font-bebas);
+}
+
+.info p:nth-child(2) {
+  margin-bottom: 0.5rem;
+}
+
+.info p:nth-child(3),
+.info p:nth-child(4) {
+  color: #aaa;
+}

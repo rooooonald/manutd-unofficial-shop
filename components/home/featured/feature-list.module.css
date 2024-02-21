@@ -1,0 +1,18 @@
+.wrapper {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+  row-gap: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+    height: auto;
+
+    flex-direction: column;
+  }
+}

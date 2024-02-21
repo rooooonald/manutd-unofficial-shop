@@ -1,0 +1,71 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.option-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.option-buttons button {
+  width: 50%;
+  padding: 1rem;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.option-buttons button h3 {
+  margin-bottom: 1rem;
+}
+
+.option-buttons button p {
+  font-family: var(--font-nunito);
+  text-align: left;
+  z-index: 1;
+}
+
+.option-buttons button .devil-icon {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+
+  opacity: 0.2;
+  filter: invert();
+}
+
+.highlight-text {
+  font-weight: 700;
+  color: #09b852;
+}
+
+.active {
+  color: white;
+}
+
+.active img {
+  scale: 3;
+}
+
+.button {
+  width: 300px;
+}
+
+@media screen and (max-width: 576px) {
+  .option-buttons {
+    flex-direction: column;
+  }
+
+  .option-buttons button {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+  }
+}

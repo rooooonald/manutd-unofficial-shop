@@ -1,0 +1,31 @@
+.wrapper {
+  width: auto;
+  height: 30px;
+
+  display: flex;
+  gap: 5px;
+}
+
+.wrapper button {
+  width: 30px;
+  height: 30px;
+}
+
+.wrapper button:disabled {
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.active {
+  background: var(--gradient-background);
+  color: white;
+}
+
+.error {
+  background-color: rgba(146, 53, 47, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: auto;
+  }
+}

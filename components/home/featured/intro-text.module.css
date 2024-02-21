@@ -1,0 +1,9 @@
+.text {
+  font-family: var(--font-bebas);
+  font-weight: 700;
+
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  z-index: 1;
+}

@@ -1,0 +1,49 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.row1,
+.row2,
+.row3,
+.row4,
+.row5 {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+
+.half-width-input {
+  width: 50%;
+}
+
+.full-width-input {
+  width: 100%;
+}
+
+.button {
+  width: 300px;
+}
+
+@media screen and (max-width: 576px) {
+  .wrapper {
+    gap: 1rem;
+  }
+
+  .row1,
+  .row2,
+  .row3,
+  .row4,
+  .row5 {
+    flex-wrap: wrap;
+  }
+
+  .half-width-input {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
