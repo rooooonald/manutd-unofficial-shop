@@ -20,7 +20,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  column-gap: 50px;
+  column-gap: 2rem;
   row-gap: 0.8rem;
 }
 
@@ -29,4 +29,10 @@
   margin: 10px 0;
 
   opacity: 0.5;
+}
+
+@media screen and (max-width: 576px) {
+  .policy ul {
+    justify-content: flex-start;
+  }
 }

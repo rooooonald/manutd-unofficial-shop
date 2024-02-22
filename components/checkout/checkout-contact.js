@@ -4,11 +4,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { checkoutFormActions } from "@/store/checkout-form-slice";
 
 import FormInput from "../ui/form-input";
-import { checkEmpty } from "@/lib/validations";
-
-import styles from "./checkout-contact.module.css";
 import FormSelect from "../ui/form-select";
 import ButtonPrimary from "../ui/button-primary";
+import {
+  checkEmpty,
+  validateEmail,
+  validatePhone,
+  validatePostalCode,
+} from "@/lib/validations";
+
+import styles from "./checkout-contact.module.css";
 
 export default function CheckoutContact({ onNext }) {
   const [province, setProvince] = useState("ON");
@@ -25,7 +30,7 @@ export default function CheckoutContact({ onNext }) {
     focusHandler: emailFocusHandler,
     valueChangeHandler: emailChangeHandler,
     blurHandler: emailBlurHandler,
-  } = useInput(checkEmpty, checkoutForm.email);
+  } = useInput(validateEmail, checkoutForm.email);
 
   const {
     value: phone,
@@ -35,7 +40,7 @@ export default function CheckoutContact({ onNext }) {
     focusHandler: phoneFocusHandler,
     valueChangeHandler: phoneChangeHandler,
     blurHandler: phoneBlurHandler,
-  } = useInput(checkEmpty, checkoutForm.phone);
+  } = useInput(validatePhone, checkoutForm.phone);
 
   const {
     value: fName,
@@ -75,7 +80,7 @@ export default function CheckoutContact({ onNext }) {
     focusHandler: postalCodeFocusHandler,
     valueChangeHandler: postalCodeChangeHandler,
     blurHandler: postalCodeBlurHandler,
-  } = useInput(checkEmpty, checkoutForm.postalCode);
+  } = useInput(validatePostalCode, checkoutForm.postalCode);
 
   const {
     value: city,
@@ -157,7 +162,7 @@ export default function CheckoutContact({ onNext }) {
             onChange: phoneChangeHandler,
             onBlur: phoneBlurHandler,
             onFocus: phoneFocusHandler,
-            placeholder: phoneIsFocused ? "" : "PHONE",
+            placeholder: phoneIsFocused ? "" : "PHONE (e.g. 4561239876)",
           }}
           isFocused={phoneIsFocused}
           errorMsg={phoneHasError && "Invalid Phone Number"}
@@ -228,7 +233,7 @@ export default function CheckoutContact({ onNext }) {
             onChange: postalCodeChangeHandler,
             onBlur: postalCodeBlurHandler,
             onFocus: postalCodeFocusHandler,
-            placeholder: postalCodeIsFocused ? "" : "POSTAL CODE",
+            placeholder: postalCodeIsFocused ? "" : "POSTAL CODE (e.g. N6B2R3)",
           }}
           isFocused={postalCodeIsFocused}
           errorMsg={postalCodeHasError && "Invalid Postal Code"}

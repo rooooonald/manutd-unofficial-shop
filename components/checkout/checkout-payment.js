@@ -3,10 +3,16 @@ import { checkoutFormActions } from "@/store/checkout-form-slice";
 import { useDispatch, useSelector } from "react-redux";
 
 import FormInput from "../ui/form-input";
-import { checkEmpty } from "@/lib/validations";
+import ButtonPrimary from "../ui/button-primary";
+import {
+  checkEmpty,
+  validateCVV,
+  validateCardExpMonth,
+  validateCardExpYear,
+  validateCardNum,
+} from "@/lib/validations";
 
 import styles from "./checkout-payment.module.css";
-import ButtonPrimary from "../ui/button-primary";
 
 export default function CheckoutPayment({ onNext }) {
   const checkoutForm = useSelector((state) => state.checkoutForm);
@@ -20,7 +26,7 @@ export default function CheckoutPayment({ onNext }) {
     focusHandler: numFocusHandler,
     valueChangeHandler: numChangeHandler,
     blurHandler: numBlurHandler,
-  } = useInput(checkEmpty, checkoutForm.creditCardNum);
+  } = useInput(validateCardNum, checkoutForm.creditCardNum);
 
   const {
     value: name,
@@ -40,7 +46,7 @@ export default function CheckoutPayment({ onNext }) {
     focusHandler: expiryMonthFocusHandler,
     valueChangeHandler: expiryMonthChangeHandler,
     blurHandler: expiryMonthBlurHandler,
-  } = useInput(checkEmpty, checkoutForm.creditCardExpMonth);
+  } = useInput(validateCardExpMonth, checkoutForm.creditCardExpMonth);
 
   const {
     value: expiryYear,
@@ -50,7 +56,7 @@ export default function CheckoutPayment({ onNext }) {
     focusHandler: expiryYearFocusHandler,
     valueChangeHandler: expiryYearChangeHandler,
     blurHandler: expiryYearBlurHandler,
-  } = useInput(checkEmpty, checkoutForm.creditCardExpYear);
+  } = useInput(validateCardExpYear, checkoutForm.creditCardExpYear);
 
   const {
     value: cvv,
@@ -60,7 +66,7 @@ export default function CheckoutPayment({ onNext }) {
     focusHandler: cvvFocusHandler,
     valueChangeHandler: cvvChangeHandler,
     blurHandler: cvvBlurHandler,
-  } = useInput(checkEmpty, checkoutForm.creditCardCVV);
+  } = useInput(validateCVV, checkoutForm.creditCardCVV);
 
   const submitHandler = () => {
     dispatch(

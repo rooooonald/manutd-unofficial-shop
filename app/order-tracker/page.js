@@ -30,17 +30,22 @@ export default function OrderTrackerPage() {
     const res = await getOrder(orderId);
     const foundOrder = JSON.parse(res);
 
-    console.log(foundOrder);
     if (!foundOrder) {
       setOrder({ status: "not found" });
       return;
     }
+    orderIdResetHandler();
     setOrder(foundOrder);
   };
 
   return (
     <main className={styles.wrapper}>
-      <h1>Track Your Order</h1>
+      <h1>
+        Track Your Order
+        <span>
+          (For Testing) <span>df0a8e3b-bf19-4080-a519-06866a1b523c</span>
+        </span>
+      </h1>
       <form className={styles.form}>
         <FormInput
           id="tracker-orderid"

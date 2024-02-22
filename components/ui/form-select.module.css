@@ -22,3 +22,13 @@
   font-size: 1rem;
   font-family: var(--font-nunito);
 }
+
+@media screen and (max-width: 576px) {
+  .wrapper label {
+    left: 0.3rem;
+  }
+
+  .wrapper select {
+    padding: 0 0.5rem;
+  }
+}

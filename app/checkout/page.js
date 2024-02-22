@@ -50,7 +50,7 @@ export default function CheckoutPage() {
 
   const [state, formAction] = useFormState(submitOrder, {
     status: null,
-    id: null,
+    orderId: null,
   });
 
   useEffect(() => {
