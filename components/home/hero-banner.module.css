@@ -11,7 +11,7 @@
       rgba(0, 0, 0, 0.5) 70%,
       rgba(0, 0, 0, 1) 100%
     ),
-    url("/images/hero-banner.jpg");
+    url("/images/hero-banner.webp");
   background-size: cover;
   background-position: 70% 70%;
 }
