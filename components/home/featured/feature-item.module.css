@@ -45,12 +45,13 @@
   width: 100%;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  gap: 1rem;
 }
 
 .quantity-control {
-  width: 35%;
+  width: 65px;
 
   display: flex;
   flex-direction: row;
@@ -65,15 +66,20 @@
 }
 
 .quantity-control button {
-  width: 20%;
-  height: 100%;
+  width: 20px;
+  height: 20px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   background-color: transparent;
-  font-size: 1.5rem;
+}
+
+.quantity-control button:active {
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
+  border-radius: 50%;
 }
 
 .cart-button {
@@ -117,11 +123,6 @@
 
   .add-cart > div:nth-child(2) {
     width: 100%;
-
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 30px;
   }
 
   .quantity-control {

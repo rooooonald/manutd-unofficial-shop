@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import useSelectSize from "@/hooks/use-select-size";
 
 import { useDispatch } from "react-redux";
 import { cartActions } from "@/store/cart-slice";
@@ -9,7 +10,8 @@ import SizeSelector from "@/components/ui/size-selector";
 
 import styles from "./feature-item.module.css";
 import { m } from "framer-motion";
-import useSelectSize from "@/hooks/use-select-size";
+
+import { LuMinus, LuPlus } from "react-icons/lu";
 
 export default function FeatureItem({ item }) {
   const { pid, img, price, name, sizes } = item;
@@ -87,9 +89,13 @@ export default function FeatureItem({ item }) {
         />
         <div>
           <div className={styles["quantity-control"]}>
-            <button onClick={() => setQuantityHandler(-1)}>-</button>
+            <button onClick={() => setQuantityHandler(-1)}>
+              <LuMinus />
+            </button>
             <p> {quantity}</p>
-            <button onClick={() => setQuantityHandler(1)}>+</button>
+            <button onClick={() => setQuantityHandler(1)}>
+              <LuPlus />
+            </button>
           </div>
           <button
             className={`${styles["cart-button"]} moving-gradient`}
