@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./filter-section.module.css";
 import { m, LazyMotion, domAnimation, AnimatePresence } from "framer-motion";
 import { IconClose } from "../ui/icons";
+import Image from "next/image";
 
 const capitalLetter = (text) => {
   const firstLetter = text[0].toUpperCase();
@@ -45,13 +46,21 @@ export default function FilterSection({
                   key={option}
                   onClick={() => onChangeFilter(filterType, option)}
                 >
-                  <div
-                    className={`
-                  ${
-                    filteredList.includes(option) ? styles.active : undefined
-                  } ${styles["radio-button"]}
-                `}
-                  ></div>
+                  <div>
+                    <Image
+                      src="/images/icons/devil.svg"
+                      alt="devil"
+                      width={15}
+                      height={15}
+                      className={`
+                      ${
+                        filteredList.includes(option)
+                          ? styles.active
+                          : undefined
+                      } ${styles["radio-button"]}
+                    `}
+                    />
+                  </div>
                   <p>{capitalLetter(option)}</p>
                 </button>
               ))}

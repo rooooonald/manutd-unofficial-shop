@@ -35,7 +35,9 @@ export default function FilterTags({ filters, onChangeFilter }) {
             onClick={() => onChangeFilter("color", color)}
           >
             <p>Color: {color}</p>
-            <div>X</div>
+            <div>
+              <IconClose />
+            </div>
           </m.button>
         ))}
         {filteredSleeve?.map((sleeve) => (
@@ -47,7 +49,9 @@ export default function FilterTags({ filters, onChangeFilter }) {
             onClick={() => onChangeFilter("sleeve", sleeve)}
           >
             <p>Sleeve: {sleeve}</p>
-            <div>X</div>
+            <div>
+              <IconClose />
+            </div>
           </m.button>
         ))}
       </div>
