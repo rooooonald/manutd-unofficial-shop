@@ -1,5 +1,6 @@
-import styles from "./cart-list.module.css";
 import CartItem from "./cart-item";
+
+import styles from "./cart-list.module.css";
 
 export default function CartList({ list }) {
   return (

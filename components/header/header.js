@@ -35,12 +35,14 @@ export default function Header() {
   }, 0);
 
   useEffect(() => {
-    if (initialFetch) {
-      const cartInLocalStorage = localStorage.getItem("cart");
-      if (cartInLocalStorage) {
-        dispatch(cartActions.replaceCart(JSON.parse(cartInLocalStorage)));
-      }
+    const cartInLocalStorage = localStorage.getItem("cart");
+    if (cartInLocalStorage) {
+      dispatch(cartActions.replaceCart(JSON.parse(cartInLocalStorage)));
+    }
+  }, []);
 
+  useEffect(() => {
+    if (initialFetch) {
       initialFetch = false;
       return;
     }

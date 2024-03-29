@@ -1,26 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+  email: "",
+  phone: "",
+  fName: "",
+  lName: "",
+  address: "",
+  postalCode: "",
+  city: "",
+  province: "ON",
+  delivery: { method: "", deliverDate: "" },
+  creditCardNum: "",
+  creditCardName: "",
+  creditCardExpMonth: "",
+  creditCardExpYear: "",
+  creditCardCVV: "",
+  isContactFilled: false,
+  isDeliveryFilled: false,
+  isPaymentFilled: false,
+};
+
 const checkoutFormSlice = createSlice({
   name: "checkout-form",
-  initialState: {
-    email: "",
-    phone: "",
-    fName: "",
-    lName: "",
-    address: "",
-    postalCode: "",
-    city: "",
-    province: "ON",
-    delivery: { method: "", deliverDate: "" },
-    creditCardNum: "",
-    creditCardName: "",
-    creditCardExpMonth: "",
-    creditCardExpYear: "",
-    creditCardCVV: "",
-    isContactFilled: false,
-    isDeliveryFilled: false,
-    isPaymentFilled: false,
-  },
+  initialState,
   reducers: {
     changeValue: (state, action) => {
       const {
@@ -94,26 +96,7 @@ const checkoutFormSlice = createSlice({
       }
     },
 
-    resetForm: (state) => {
-      state.email = "";
-      state.phone = "";
-      state.fName = "";
-      state.lName = "";
-      state.address = "";
-      state.postalCode = "";
-      state.city = "";
-      state.province = "";
-      state.delivery.method = "";
-      state.delivery.deliverDate = "";
-      state.creditCardNum = "";
-      state.creditCardName = "";
-      state.creditCardExpMonth = "";
-      state.creditCardExpYear = "";
-      state.creditCardCVV = "";
-      state.isContactFilled = false;
-      state.isDeliveryFilled = false;
-      state.isPaymentFilled = false;
-    },
+    resetForm: () => initialState,
   },
 });
 
