@@ -119,8 +119,3 @@ select:focus {
     background-position: 0 0;
   }
 }
-
-::-webkit-scrollbar {
-  height: 0px;
-  background: transparent;
-}

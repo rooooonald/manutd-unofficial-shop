@@ -30,6 +30,11 @@
   position: relative;
 }
 
+.scroll::-webkit-scrollbar {
+  height: 0px;
+  background: transparent;
+}
+
 .scroll h1 {
   width: 90px;
   position: absolute;
