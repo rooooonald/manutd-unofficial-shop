@@ -1,10 +1,18 @@
+import { useRef } from "react";
+import useHorizontalScroll from "@/hooks/use-horizontal-scroll";
 import Image from "next/image";
 import Link from "next/link";
 
 import styles from "./products-hero.module.css";
 import { LazyMotion, domAnimation, m } from "framer-motion";
+import { IconLeft, IconRight } from "../ui/icons";
 
 export default function ProductHero({ title, products }) {
+  const listRef = useRef();
+
+  const { canScrollLeft, canScrollRight, scrollLeft, scrollRight } =
+    useHorizontalScroll(listRef, 200);
+
   return (
     <LazyMotion features={domAnimation}>
       <div className={styles.wrapper}>
@@ -17,8 +25,15 @@ export default function ProductHero({ title, products }) {
           />
         </div>
 
-        <div className={styles.scroll}>
+        <div className={styles.scroll} ref={listRef}>
           <h1>{title}</h1>
+          <button
+            className={styles["scroll-left-btn"]}
+            onClick={scrollLeft}
+            style={{ visibility: canScrollLeft ? "visible" : "hidden" }}
+          >
+            <IconLeft />
+          </button>
           <m.div
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -44,6 +59,13 @@ export default function ProductHero({ title, products }) {
                 </m.div>
               </Link>
             ))}
+            <button
+              className={styles["scroll-right-btn"]}
+              onClick={scrollRight}
+              style={{ visibility: canScrollRight ? "visible" : "hidden" }}
+            >
+              <IconRight />
+            </button>
           </m.div>
         </div>
       </div>
