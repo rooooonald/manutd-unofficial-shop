@@ -4,10 +4,15 @@ export default function useHorizontalScroll(elem, scrollDistance) {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
   const [scrolled, setScrolled] = useState(0);
+  const [isResized, setIsResized] = useState(false);
 
   useEffect(() => {
     elem.current.addEventListener("scroll", () => {
       setScrolled(elem.current.scrollLeft);
+    });
+
+    window.addEventListener("resize", () => {
+      setIsResized((prev) => !prev);
     });
   }, []);
 
@@ -19,7 +24,7 @@ export default function useHorizontalScroll(elem, scrollDistance) {
     elem.current.scrollLeft <= 0
       ? setCanScrollLeft(false)
       : setCanScrollLeft(true);
-  }, [elem, scrolled]);
+  }, [elem, scrolled, isResized]);
 
   const scrollLeft = () => {
     elem.current.scrollBy({
