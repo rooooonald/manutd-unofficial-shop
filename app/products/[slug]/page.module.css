@@ -72,7 +72,7 @@
 
   border-left: 1px solid #ccc;
 
-  overflow: scroll;
+  overflow: auto;
 }
 
 .price {

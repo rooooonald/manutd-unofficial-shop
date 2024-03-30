@@ -32,7 +32,7 @@
     0 calc(100% - 20px)
   );
 
-  overflow: scroll;
+  overflow: auto;
   z-index: 101;
 }
 
