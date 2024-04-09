@@ -1,14 +1,9 @@
 import { useState } from "react";
+import Image from "next/image";
+
 import styles from "./filter-section.module.css";
 import { m, LazyMotion, domAnimation, AnimatePresence } from "framer-motion";
 import { IconClose } from "../ui/icons";
-import Image from "next/image";
-
-const capitalLetter = (text) => {
-  const firstLetter = text[0].toUpperCase();
-  const remainingLetters = text.slice(1);
-  return firstLetter + remainingLetters;
-};
 
 export default function FilterSection({
   filterType,
@@ -61,7 +56,7 @@ export default function FilterSection({
                     `}
                     />
                   </div>
-                  <p>{capitalLetter(option)}</p>
+                  <p>{option}</p>
                 </button>
               ))}
             </m.div>
